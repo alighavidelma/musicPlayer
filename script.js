@@ -15,4 +15,4 @@ let musicName = document.querySelector("#music-name");
 let currentMusic = 0;
 let audio = musics[currentMusic].audio;
 musicCover.src = musics[currentMusic].cover;
-musicName.src = musics[currentMusic].name;
+musicName.innerText = musics[currentMusic].name;
