@@ -25,3 +25,7 @@ audio.addEventListener("canplay", () => {
 audio.addEventListener("timeupdate", () => {
   range.value = audio.currentTime;
 });
+
+range.addEventListener("input", () => {
+  audio.currentTime = range.value;
+});
