@@ -16,3 +16,12 @@ let currentMusic = 0;
 let audio = musics[currentMusic].audio;
 musicCover.src = musics[currentMusic].cover;
 musicName.innerText = musics[currentMusic].name;
+
+audio.addEventListener("canplay", () => {
+  range.max = audio.duration;
+  console.log(audio.duration);
+});
+
+audio.addEventListener("timeupdate", () => {
+  range.value = audio.currentTime;
+});
