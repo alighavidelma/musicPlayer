@@ -41,3 +41,34 @@ playBtn.addEventListener("click", () => {
     playBtn.classList.replace("fa-pause", "fa-play");
   }
 });
+
+function changeMusic(state) {
+  audio.pause();
+  range.value = 0;
+  playBtn.classList.replace("fa-pause", "fa-play");
+  musicCover.style.animationPlayState = "paused";
+  audio.currentTime = 0;
+  if (state == "next") {
+    if (currentMusic == musics.length - 1) {
+      currentMusic = 0;
+    } else {
+      currentMusic += 1;
+    }
+  } else {
+    if (currentMusic == 0) {
+      currentMusic = musics.length - 1;
+    } else {
+      currentMusic -= 1;
+    }
+    audio = musics[currentMusic].audio;
+    musicCover.src = musics[currentMusic].cover;
+    musicName.innerText = musics[currentMusic].name;
+  }
+}
+
+nextBtn.addEventListener("click", () => {
+  changeMusic("next");
+});
+preBtn.addEventListener("click", () => {
+  changeMusic("pre");
+});
