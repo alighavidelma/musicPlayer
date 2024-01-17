@@ -4,6 +4,21 @@ let musics = [
     cover: "images/images1.jpeg",
     audio: new Audio("./musics/music1.mp3"),
   },
+  {
+    name: "Lose yourself",
+    cover: "images/images2.jpeg",
+    audio: new Audio("./musics/music2.mp3"),
+  },
+  {
+    name: "Ready for it",
+    cover: "images/images3.jpeg",
+    audio: new Audio("./musics/music3.mp3"),
+  },
+  {
+    name: "Enjoy your life",
+    cover: "images/images4.jpeg",
+    audio: new Audio("./musics/music4.mp3"),
+  },
 ];
 let range = document.querySelector("#music-time");
 let preBtn = document.querySelector("#pre-btn");
