@@ -29,3 +29,15 @@ audio.addEventListener("timeupdate", () => {
 range.addEventListener("input", () => {
   audio.currentTime = range.value;
 });
+
+playBtn.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    musicCover.style.animationPlayState = "running";
+    playBtn.classList.replace("fa-play", "fa-pause");
+  } else {
+    audio.pause();
+    musicCover.style.animationPlayState = "paused";
+    playBtn.classList.replace("fa-pause", "fa-play");
+  }
+});
