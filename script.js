@@ -75,10 +75,14 @@ function changeMusic(state) {
     } else {
       currentMusic -= 1;
     }
-    audio = musics[currentMusic].audio;
-    musicCover.src = musics[currentMusic].cover;
-    musicName.innerText = musics[currentMusic].name;
   }
+  audio = musics[currentMusic].audio;
+  musicCover.src = musics[currentMusic].cover;
+  musicName.innerText = musics[currentMusic].name;
+
+  audio.addEventListener("timeupdate", () => {
+    range.value = audio.currentTime;
+  });
 }
 
 nextBtn.addEventListener("click", () => {
